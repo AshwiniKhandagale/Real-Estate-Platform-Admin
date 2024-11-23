@@ -15,10 +15,6 @@ app.use('/api/admin', agentRoutes);
 app.use('/api/admin', userRoutes);
 app.use('/api/admin', propertyRoutes);
 
-// Connect to MongoDB (if needed for Admin microservice's DB)
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
-  .then(() => console.log('Admin Service DB connected'))
-  .catch((err) => console.log('Error connecting to DB', err));
 
 // Start the server
 app.listen(process.env.PORT, () => {
